@@ -18,7 +18,7 @@ function Main() {
           <Sidebar />
         </main>
         <Bar />
-        <footer class="footer"></footer>
+        <footer className="footer"></footer>
       </div>
     </div>
   );

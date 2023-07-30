@@ -14,7 +14,7 @@
 a,
 a:visited {
   text-decoration: none;
-  font-family: "StratosSkyeng", sans-serif;
+  font-family: 'StratosSkyeng', sans-serif;
   cursor: pointer;
 }
 
@@ -28,10 +28,12 @@ ul li {
 }
 
 @font-face {
-  font-family: "StratosSkyeng";
-  src: local("StratosSkyeng"), local("StratosSkyeng"),
-    url("../public/fonts/StratosSkyeng.woff2") format("woff2"),
-    url("../public//fonts/StratosSkyeng.woff") format("woff");
+  font-family: 'StratosSkyeng';
+  src:
+    local('StratosSkyeng'),
+    local('StratosSkyeng'),
+    url('../public/fonts/StratosSkyeng.woff2') format('woff2'),
+    url('../public//fonts/StratosSkyeng.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -40,7 +42,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "StratosSkyeng", sans-serif;
+  font-family: 'StratosSkyeng', sans-serif;
   color: #ffffff;
 }
 
@@ -740,7 +742,7 @@ body {
   display: grid;
   -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "image author" "image album";
+  grid-template-areas: 'image author' 'image album';
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -875,4 +877,39 @@ body {
 
 .volume__progress-line {
   width: 109px;
+}
+.filter-modal {
+  width: 248px;
+  height: 305px;
+  border-radius: 12px;
+  background-color: rgba(49, 49, 49, 1);
+  position: absolute;
+  top: 288px;
+  left: 386px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 34px;
+}
+
+.modal-year {
+  left: 556px;
+}
+
+.modal-genre {
+  left: 686px;
+}
+
+.filter-modal a {
+  color: white;
+  text-decoration: none;
+}
+
+.filter-modal a:hover {
+  color: #ad61ff;
+  text-decoration: underline;
+}
+
+.active {
+  color: tomato;
 }

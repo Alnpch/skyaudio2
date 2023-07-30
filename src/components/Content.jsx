@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import Playlist from "./Playlist";
-
+import PlaylistSkeleton from "./PlaylistSkeleton";
 function Content() {
+  const [ isLoading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false),2000)
+  })
   return (
     <div className="centerblock__content">
       <div className="content__title playlist-title">
@@ -14,7 +19,7 @@ function Content() {
           </svg>
         </div>
       </div>
-      <Playlist />
+      {isLoading ? <PlaylistSkeleton /> : <Playlist />}
     </div>
   );
 }

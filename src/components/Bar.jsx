@@ -1,6 +1,12 @@
-import React from "react";
+import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 function Bar() {
+  const [Loading, setLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000)
+  })
   return (
     <div className="bar">
       <div className="bar__content">
@@ -36,24 +42,27 @@ function Bar() {
             </div>
 
             <div className="player__track-play track-play">
-              <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-                  </svg>
+              {Loading ? (
+                <img src="img/skeleton3.svg" alt="" />
+              ) : (
+                <div className="track-play__contain">
+                  <div className="track-play__image">
+                    <svg className="track-play__svg" alt="music">
+                      <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
+                    </svg>
+                  </div>
+                  <div className="track-play__author">
+                    <a className="track-play__author-link" href="http://">
+                      Ты та...
+                    </a>
+                  </div>
+                  <div className="track-play__album">
+                    <a className="track-play__album-link" href="http://">
+                      Баста
+                    </a>
+                  </div>
                 </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    Ты та...
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    Баста
-                  </a>
-                </div>
-              </div>
-
+              )}
               <div className="track-play__like-dis">
                 <div className="track-play__like _btn-icon">
                   <svg className="track-play__like-svg" alt="like">
@@ -87,7 +96,7 @@ function Bar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Bar;
+export default Bar
