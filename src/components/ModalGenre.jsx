@@ -1,11 +1,9 @@
-import React from 'react'
-
 function ModalGenre() {
   return (
     <div className="filter-modal modal-genre">
-      <a href="#">Рок</a>
-      <a href="#">Рэп</a>
-      <a href="#">Джаз</a>
+      <a href="#name">Рок</a>
+      <a href="#name">Рэп</a>
+      <a href="#name">Джаз</a>
     </div>
   )
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 function Playlist() {
   return (
     <div className="content__playlist playlist">
@@ -178,7 +176,7 @@ function Playlist() {
             </div>
             <div className="track__title-text">
               <a className="track__title-link" href="http://">
-                Eyes on Fire{" "}
+                Eyes on Fire{' '}
                 <span className="track__title-span">(Zeds Dead Remix)</span>
               </a>
             </div>
@@ -212,7 +210,7 @@ function Playlist() {
             </div>
             <div className="track__title-text">
               <a className="track__title-link" href="http://">
-                Mucho Bien{" "}
+                Mucho Bien{' '}
                 <span className="track__title-span">(Hi Profile Remix)</span>
               </a>
             </div>
@@ -279,7 +277,7 @@ function Playlist() {
             </div>
             <div className="track__title-text">
               <a className="track__title-link" href="http://">
-                How Deep Is Your Love{" "}
+                How Deep Is Your Love{' '}
                 <span className="track__title-span"></span>
               </a>
             </div>
@@ -346,13 +344,13 @@ function Playlist() {
             </div>
             <div className="track__title-text">
               <a className="track__title-link" href="http://">
-                {" "}
+                {' '}
                 <span className="track__title-span"></span>
               </a>
             </div>
           </div>
           <div className="track__author">
-            <a className="track__author-link" href="http://"></a>
+            <a className="track__author-link"   href="http://"></a>
           </div>
           <div className="track__album">
             <a className="track__album-link" href="http://"></a>
@@ -366,7 +364,7 @@ function Playlist() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Playlist;
+export default Playlist

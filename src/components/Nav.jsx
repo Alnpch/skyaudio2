@@ -1,15 +1,14 @@
-import React from 'react'
 import { useState } from 'react'
 
 function Nav() {
   const [visible, setVisible] = useState(false)
-  const toggleVisibility = () => setVisible(!visible)
+  const toggleVisibility = () => setVisible((currentVisible) => !currentVisible)
   return (
     <nav className="main__nav nav">
       <div className="nav__logo logo">
         <img className="logo__image" src="img/logo1.svg" alt="logo" />
       </div>
-      <div className="nav__burger burger" onClick={toggleVisibility}>
+      <div className="nav__burger burger" onClick={toggleVisibility} onKeyUp={toggleVisibility}  role="button" tabIndex={0}>
         <span className="burger__line"></span>
         <span className="burger__line"></span>
         <span className="burger__line"></span>

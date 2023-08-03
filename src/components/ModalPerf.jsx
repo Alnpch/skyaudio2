@@ -1,11 +1,9 @@
-import React from 'react'
-
 function ModalPerf() {
   return (
     <div className="filter-modal">
-      <a href="#">Michael Jackson</a>
-      <a href="#">Frank Sinatra</a>
-      <a href="#">Calvin Harris</a>
+      <a href="#name">Michael Jackson</a>
+      <a href="#name">Frank Sinatra</a>
+      <a href="#name">Calvin Harris</a>
     </div>
   )
 }

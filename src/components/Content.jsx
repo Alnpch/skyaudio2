@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import Playlist from "./Playlist";
-import PlaylistSkeleton from "./PlaylistSkeleton";
+import { useEffect, useState } from 'react'
+import Playlist from './Playlist'
+import PlaylistSkeleton from './PlaylistSkeleton'
+
 function Content() {
-  const [ isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true)
   useEffect(() => {
-    setTimeout(() => setLoading(false),2000)
+    setTimeout(() => setLoading(false), 2000)
   })
   return (
     <div className="centerblock__content">
@@ -21,7 +21,7 @@ function Content() {
       </div>
       {isLoading ? <PlaylistSkeleton /> : <Playlist />}
     </div>
-  );
+  )
 }
 
-export default Content;
+export default Content

@@ -1,6 +1,4 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ModalGenre from './ModalGenre'
 import ModalPerf from './ModalPerf'
 import ModalYear from './ModalYear'
@@ -9,9 +7,9 @@ function Search() {
   const [modalPerf, setModalPerf] = useState(false)
   const [modalGenre, setModalGenre] = useState(false)
   const [modalYear, setModalYear] = useState(false)
-  const modalTogglePerf = () => setModalPerf(!modalPerf)
-  const modalToggleGenre = () => setModalGenre(!modalGenre)
-  const modalToggleYear = () => setModalYear(!modalYear)
+  const modalTogglePerf = () => setModalPerf((currentmodalPerf) => !currentmodalPerf)
+  const modalToggleGenre = () => setModalGenre((currentmodalGenre) =>!currentmodalGenre )
+  const modalToggleYear = () => setModalYear((currentmodalYear) => !currentmodalYear)
 
   useEffect(() => {
     if (modalPerf) {
@@ -52,19 +50,19 @@ function Search() {
         <div className="filter__title">Искать по:</div>
         <div
           className="filter__button button-author _btn-text"
-          onClick={modalTogglePerf}
+          onClick={modalTogglePerf} onKeyUp={modalTogglePerf}  role="button" tabIndex={0}
         >
           исполнителю
         </div>
         <div
           className="filter__button button-year _btn-text"
-          onClick={modalToggleYear}
+          onClick={modalToggleYear} onKeyUp={modalToggleYear}  role="button" tabIndex={0} 
         >
           году выпуска
         </div>
         <div
           className="filter__button button-genre _btn-text"
-          onClick={modalToggleGenre}
+          onClick={modalToggleGenre} onKeyUp={modalToggleGenre}  role="button" tabIndex={0}
         >
           жанру
         </div>

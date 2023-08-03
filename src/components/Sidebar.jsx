@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function Sidebar() {
   const [Loading, setLoading] = useState(true)
@@ -16,7 +15,7 @@ function Sidebar() {
       <div className="sidebar__block">
         <div className="sidebar__list">
           <div className="sidebar__item">
-            <a className="sidebar__link" href="#">
+            <a className="sidebar__link" href="#name">
               {Loading ? (
                 <img
                   className="sidebar__img"
@@ -33,7 +32,7 @@ function Sidebar() {
             </a>
           </div>
           <div className="sidebar__item">
-            <a className="sidebar__link" href="#">
+            <a className="sidebar__link" href="#name">
               {Loading ? (
                 <img
                   className="sidebar__img"
@@ -50,7 +49,7 @@ function Sidebar() {
             </a>
           </div>
           <div className="sidebar__item">
-            <a className="sidebar__link" href="#">
+            <a className="sidebar__link" href="#name">
               {Loading ? (
                 <img
                   className="sidebar__img"

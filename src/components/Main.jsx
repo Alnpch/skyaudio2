@@ -1,9 +1,8 @@
-import React from "react";
-import Bar from "./Bar";
-import Content from "./Content";
-import Nav from "./Nav";
-import Search from "./Search";
-import Sidebar from "./Sidebar";
+import Bar from './Bar'
+import Content from './Content'
+import Nav from './Nav'
+import Search from './Search'
+import Sidebar from './Sidebar'
 
 function Main() {
   return (
@@ -12,8 +11,8 @@ function Main() {
         <main className="main">
           <Nav />
           <div className="main__centerblock centerblock">
-          <Search />
-          <Content />
+            <Search />
+            <Content />
           </div>
           <Sidebar />
         </main>
@@ -21,7 +20,7 @@ function Main() {
         <footer className="footer"></footer>
       </div>
     </div>
-  );
+  )
 }
 
-export default Main;
+export default Main
