@@ -311,6 +311,10 @@ body {
 .filter__button:not(:last-child) {
   margin-right: 10px;
 }
+.filter__button:focus {
+  border-color: #d9b6ff;
+  color: #d9b6ff;
+}
 
 .content__title {
   display: -webkit-box;
@@ -461,6 +465,7 @@ body {
 }
 
 .track__author-link {
+  font-size: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -474,6 +479,7 @@ body {
 }
 
 .track__album-link {
+  font-size: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
