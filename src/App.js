@@ -1,7 +1,14 @@
-import Main from './components/MAIN/Main'
+import { useState } from 'react'
+import AppRoutes from './routes'
 
 function App() {
-  return <Main />
+  const initialUserState = localStorage.getItem('user') === 'true'
+  const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
+  const handleLogin = () => {
+    localStorage.setItem('isLoggedIn', 'setIsLoggedIn')
+    setIsLoggedIn(true)
+  }
+  return <AppRoutes isLoggedIn={isLoggedIn} onAuthButtonClick={handleLogin} />
 }
 
 export default App

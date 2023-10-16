@@ -1,11 +1,11 @@
-import Bar from '../BAR/Bar'
-import Content from '../CONTENT/Content'
-import Nav from '../NAV/Nav'
-import Search from '../SEARCH/Search'
-import Sidebar from '../SIDEBAR/Sidebar'
-import * as S from './MainStyle'
+import Bar from '../../components/BAR/Bar'
+import Content from '../../components/CONTENT/Content'
+import Nav from '../../components/NAV/Nav'
+import Search from '../../components/SEARCH/Search'
+import Sidebar from '../../components/SIDEBAR/Sidebar'
+import * as S from './HomeStyle'
 
-function Main() {
+function Home() {
   return (
     <S.Wrapper>
       <S.Container>
@@ -24,4 +24,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Home
