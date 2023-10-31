@@ -17,7 +17,7 @@ function Sidebar() {
       <S.SidebarBlock>
         <S.SidebarList>
           <S.SidebarItem>
-          <NavLink to="/category">
+          <NavLink to="/category/1">
             <S.SidebarLink href="#name">
               {Loading ? (
                 <S.SidebarImg src="img/skeleton2.svg" alt="day's playlist" />
@@ -28,7 +28,7 @@ function Sidebar() {
             </NavLink>
           </S.SidebarItem>
           <S.SidebarItem>
-          <NavLink to="/category">
+          <NavLink to="/category/2">
             <S.SidebarLink href="#name">
               {Loading ? (
                 <S.SidebarImg src="img/skeleton2.svg" alt="day's playlist" />
@@ -39,7 +39,7 @@ function Sidebar() {
             </NavLink>
           </S.SidebarItem>
           <S.SidebarItem>
-          <NavLink to="/category">
+          <NavLink to="/category/3">
             <S.SidebarLink href="#name">
               {Loading ? (
                 <S.SidebarImg src="img/skeleton2.svg" alt="day's playlist" />
