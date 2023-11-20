@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react'
-import Playlist from '../PLAYLIST/Playlist'
-import PlaylistSkeleton from '../PLAYLIST/PlaylistSkeleton'
+// import { useEffect, useState } from 'react'
+// import Playlist from '../PLAYLIST/Playlist'
+// import PlaylistSkeleton from '../PLAYLIST/PlaylistSkeleton'
 import * as S from './ContentStyle'
 
 function Content() {
-  const [isLoading, setLoading] = useState(true)
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2000)
-  })
   return (
     <S.ContentCenterBlock>
       <S.ContentTitle>
@@ -20,7 +16,6 @@ function Content() {
           </S.PlayListTitleSvg>
         </S.PlayListTitleColFour>
       </S.ContentTitle>
-      {isLoading ? <PlaylistSkeleton /> : <Playlist />}
     </S.ContentCenterBlock>
   )
 }
