@@ -11,7 +11,12 @@ function AppRoutes({ isLoggedIn, onAuthButtonClick }) {
   return (
     <Routes>
       <Route element={<ProtectedRoute isAllowed={isLoggedIn} />}>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home />
+          }
+        />
         <Route path="/category/:id" element={<Collections />} />
         <Route path="/favorites" element={<MyPlayList />} />
       </Route>

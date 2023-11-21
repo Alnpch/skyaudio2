@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as S from './BarStyle'
 
-function Bar() {
+function Bar({activTrack}) {
   const [Loading, setLoading] = useState(true)
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000)
@@ -52,12 +52,12 @@ function Bar() {
                   </S.TrackPlayImg>
                   <S.TrackPlayAuthor>
                     <S.TrackPlayAuthorLink href="http://">
-                      Ты та...
+                      {activTrack.name}
                     </S.TrackPlayAuthorLink>
                   </S.TrackPlayAuthor>
                   <S.TrackPlayAlbum>
                     <S.TrackPlayAlbumLink href="http://">
-                      Баста
+                      {activTrack.author}
                     </S.TrackPlayAlbumLink>
                   </S.TrackPlayAlbum>
                 </S.TrackPlayContain>
