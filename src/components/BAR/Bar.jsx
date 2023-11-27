@@ -15,7 +15,7 @@ function Bar({ activTrack }) {
   const [volume, setVolume] = useState(1)
 
   const handleStart = () => {
-    console.log('playing')
+    console.log('playing1')
     audioComponentRef.current.play()
     setIsPlaying(true)
   }
@@ -47,6 +47,14 @@ function Bar({ activTrack }) {
     }
   })
 
+  useEffect (() => {
+    if (activTrack.track_file) {
+      console.log('playing')
+      setIsPlaying(true);
+      audioComponentRef.current.play()
+    }
+  }, [activTrack])
+
   const timeOnChange = (event) => {
     audioComponentRef.current.currentTime = event.target.value
   }
@@ -68,7 +76,7 @@ function Bar({ activTrack }) {
         controls
         ref={audioComponentRef}
         src={activTrack.track_file}
-        autoPlay
+        
       />
 
       <S.Bar>
@@ -123,7 +131,12 @@ function Bar({ activTrack }) {
                 </S.BarPlayerBtnNext>
                 <S.BarPlayerBtnRepeat>
                   <S.BarPlayerBtnRepeatSvg alt="repeat" onClick={repeatClick}>
-                    <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
+                  {isRepeat ? (
+                      <use xlinkHref="img/icon/sprite.svg#active-repeat"></use>
+                    ) : (
+                      <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
+                    )}
+                    
                   </S.BarPlayerBtnRepeatSvg>
                 </S.BarPlayerBtnRepeat>
                 <S.BarPlayerBtnShuffle>

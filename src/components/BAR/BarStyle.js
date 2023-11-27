@@ -162,6 +162,7 @@ export const BarPlayerBtnRepeat = styled.div`
   padding: 5px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 export const BarPlayerBtnRepeatSvg = styled.svg`
   width: 18px;
