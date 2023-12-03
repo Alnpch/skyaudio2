@@ -20,11 +20,12 @@ color: #ffffff;
 margin-right: 16px;
 
 `
-export const SidebarAvatar = styled.p`
-width: 43px;
-height: 43px;
-background-color: #313131;
-border-radius: 50%;
+export const SidebarAvatar = styled.img`
+  width: 43px;
+  height: 43px;
+  background-color: #313131;
+  border-radius: 50%;
+  cursor: pointer;
 `
 export const SidebarBlock = styled.div`
   height: 100%;

@@ -1,11 +1,16 @@
 import { styled } from 'styled-components'
 
+export const AudioComponent = styled.audio`
+  width: 600px;
+  display: none;
+`
+
 export const Bar = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.5);
+  background: rgba(28, 28, 28, 1);
 `
 export const BarContent = styled.div`
 display: -webkit-box;
@@ -17,13 +22,63 @@ display: flex;
 flex-direction: column;
 }
 `
-export const BarPlayerProgress = styled.div`
+export const BarPlayerProgress = styled.input`
+--progress-height: 8px;
+--progress-color: #b672ff;
+--progress-color: ${(props) => props.$color ?? '#b672ff'};
+
+--progress-bg-color: #2e2e2e;
+
+margin: 0;
 width: 100%;
-height: 5px;
-background: #2e2e2e;
+height: var(--progress-height);
+-webkit-appearance: none;
+cursor: pointer;
+background: transparent;
+position: relative;
+overflow: hidden;
+
+&::-webkit-slider-runnable-track {
+  position: relative;
+  height: var(--progress-height);
+  background: var(--progress-bg-color);
+}
+&::-webkit-slider-thumb {
+  --thumb-height: 1px;
+  --thumb-width: 1px;
+  position: relative;
+  -webkit-appearance: none;
+  width: var(--thumb-width, var(--thumb-height));
+  box-shadow: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+    100vmax var(--progress-color);
+}
+
+&::-webkit-slider-runnable-track {
+  background: var(--progress-bg-color);
+}
+
+/* FF */
+&::-moz-range-track {
+  width: 100%;
+  height: var(--progress-height);
+  background: var(--progress-bg-color);
+  border: none;
+  border-radius: 0px;
+}
+&::-moz-range-thumb {
+  border: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: transparent;
+}
+&::-moz-range-progress {
+  background-color: var(--progress-color);
+  height: var(--progress-height);
+}
 `
 export const BarPlayerBlock = styled.div`
-height: 73px;
+  height: 73px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +91,7 @@ height: 73px;
   justify-content: space-between;
 `
 export const BarPlayer = styled.div`
-display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -51,7 +106,7 @@ display: -webkit-box;
   justify-content: flex-start;
 `
 export const BarPlayerControls = styled.div`
- display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -61,28 +116,29 @@ export const BarPlayerControls = styled.div`
   padding: 0 27px 0 31px;
 `
 export const BarPlayerBtnPrev = styled.div`
-padding: 5px;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
-margin-right: 23px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 23px;
 `
 export const BarPlayerBtnPlay = styled.div`
-padding: 5px;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
-margin-right: 23px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 23px;
+  cursor: pointer;
 `
 export const BarPlayerBtnPlayPrevSvg = styled.svg`
-width: 15px;
-height: 14px;
+  width: 15px;
+  height: 14px;
 `
 export const BarPlayerBtnPlaySvg = styled.svg`
   width: 22px;
@@ -106,12 +162,13 @@ export const BarPlayerBtnRepeat = styled.div`
   padding: 5px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 export const BarPlayerBtnRepeatSvg = styled.svg`
-width: 18px;
-height: 12px;
-fill: transparent;
-stroke: #696969;
+  width: 18px;
+  height: 12px;
+  fill: transparent;
+  stroke: #696969;
 `
 export const BarPlayerBtnShuffle = styled.div`
   padding: 5px;
@@ -126,7 +183,7 @@ export const BarPlayerBtnShuffleSvg = styled.svg`
   stroke: #696969;
 `
 export const BarPlayerTrackPlay = styled.div`
-display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -181,17 +238,17 @@ export const TrackPlayAlbumLink = styled.a`
   color: #ffffff;
 `
 export const TrackPlayLikeDis = styled.div`
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
--ms-flex-direction: row;
-flex-direction: row;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
-margin-left: 26%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 26%;
 `
 export const TrackPlayLike = styled.div`
   padding: 5px;
@@ -219,7 +276,7 @@ export const BarVolumeBlock = styled.div`
   padding: 0 92px 0 0;
 `
 export const VolumeContent = styled.div`
-display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -253,5 +310,8 @@ export const VolumeProgress = styled.div`
 export const VolumeProgressLine = styled.input`
   width: 109px;
 `
-
-
+export const Timer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+`;
