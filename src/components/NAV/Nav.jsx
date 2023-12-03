@@ -35,7 +35,7 @@ function Nav() {
             </NavLink>
             <NavLink to="/login">
             <S.MenuItem className="menu__item">
-              <S.MenuLink href="http://">Войти</S.MenuLink>
+              <S.MenuLink to="/login">Выйти</S.MenuLink>
             </S.MenuItem>
             </NavLink>
           </S.MenuList>

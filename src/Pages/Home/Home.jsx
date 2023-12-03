@@ -5,7 +5,7 @@ import Nav from '../../components/NAV/Nav'
 import Search from '../../components/SEARCH/Search'
 import Sidebar from '../../components/SIDEBAR/Sidebar'
 import * as S from './HomeStyle'
-import getTrack from '../../api'
+import getTrack from '../../API/apiTrack'
 import Playlist from '../../components/PLAYLIST/Playlist'
 import PlaylistSkeleton from '../../components/PLAYLIST/PlaylistSkeleton'
 

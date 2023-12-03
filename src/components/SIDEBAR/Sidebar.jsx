@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useUserContext } from '../../context/user'
 import * as S from './SidebarStyle'
 
 function Sidebar() {
   const [Loading, setLoading] = useState(true)
+  const { currentUser } = useUserContext();
+  console.log(currentUser);
+  const logOut = () => {
+    console.log("ghg")
+    localStorage.clear();
+  };
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000)
@@ -11,8 +18,10 @@ function Sidebar() {
   return (
     <S.MainSidebar>
       <S.SidebarPersonal>
-        <S.SidebarPersonalName>Sergey.Ivanov</S.SidebarPersonalName>
-        <S.SidebarAvatar></S.SidebarAvatar>
+        <S.SidebarPersonalName>{currentUser.username}</S.SidebarPersonalName>
+        <NavLink to="/login">
+              <S.SidebarAvatar src="img/icon/outsvg.svg" alt="out" onClick={logOut} />
+            </NavLink>
       </S.SidebarPersonal>
       <S.SidebarBlock>
         <S.SidebarList>
